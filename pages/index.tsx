@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <div className="mx-auto h-full w-full max-w-[680px] pb-[80px]">
           <div className="fixed inset-0 -z-10 bg-black bg-cover bg-center bg-no-repeat"></div>
           <div
-            className={`before:fixed before:inset-0 before:-z-10 before:h-full before:w-full before:bg-[url('/static/images/background.png')] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-5 before:content-['']`}
+            className={`before:fixed before:inset-0 before:-z-10 before:h-full before:w-full before:bg-[url('/static/images/background.png')] before:bg-cover before:bg-center before:bg-no-repeat before:opacity-20 before:content-['']`}
           ></div>
           <Profile />
           <Links />
