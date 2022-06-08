@@ -81,6 +81,12 @@ export default function Document() {
         <meta name="msapplication-config" content="/static/favicons/browserconfig.xml" />
         <meta name="theme-color" content="#ffffff" />
         <link rel="manifest" href="/static/manifest.json" />
+        <script
+          async
+          defer
+          data-website-id="f21b09bd-21de-42de-bb40-78b7bc9fcb79"
+          src="https://umami.honghong.me/umami.js"
+        ></script>
       </Head>
       <body>
         <Main />
