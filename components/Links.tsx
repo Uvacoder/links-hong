@@ -29,13 +29,13 @@ const Link = ({ icon, title, url, color }: linkType) => {
         scale: 0.95,
       }}
       onClick={() => openInNewTab(url)}
-      className="relative flex items-center justify-center px-6 py-4 border-4 rounded-lg cursor-pointer bg-black/75"
+      className="relative flex cursor-pointer items-center justify-center rounded-lg border-4 bg-black/75 px-6 py-4"
       style={{ borderColor: color }}
     >
-      <div className="absolute w-10 mx-4 left-12">
-        <FontAwesomeIcon icon={icon} color={color} size="2x" className="w-10 mx-auto" />
+      <div className="absolute left-12 mx-4 w-10">
+        <FontAwesomeIcon icon={icon} color={color} size="2x" className="mx-auto w-10" />
       </div>
-      <span className="text-white select-none">{title}</span>
+      <span className="select-none text-white">{title}</span>
     </motion.div>
   )
 }

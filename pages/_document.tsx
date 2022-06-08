@@ -5,7 +5,6 @@ export default function Document() {
     <Html lang="zh-TW">
       <Head>
         <meta name="robots" content="follow, index" />
-        <title>Link | 小康</title>
         <meta name="description" content="Front-end developer, YouTuber." />
         <meta property="og:url" content="https://link.honghong.me/" />
         <link rel="canonical" href="https://link.honghong.me/"></link>
