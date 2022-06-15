@@ -3,6 +3,7 @@ import {
   faFacebook,
   faGithub,
   faInstagram,
+  faStackOverflow,
   faTwitter,
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons'
@@ -29,13 +30,13 @@ const Link = ({ icon, title, url, color }: linkType) => {
         scale: 0.95,
       }}
       onClick={() => openInNewTab(url)}
-      className="relative flex cursor-pointer items-center justify-center rounded-lg border-4 bg-black/75 px-6 py-4"
+      className="relative flex items-center justify-center px-6 py-4 border-4 rounded-lg cursor-pointer bg-black/75"
       style={{ borderColor: color }}
     >
-      <div className="absolute left-12 mx-4 w-10">
-        <FontAwesomeIcon icon={icon} color={color} size="2x" className="mx-auto w-10" />
+      <div className="absolute w-10 mx-4 left-12">
+        <FontAwesomeIcon icon={icon} color={color} size="2x" className="w-10 mx-auto" />
       </div>
-      <span className="select-none text-white">{title}</span>
+      <span className="text-white select-none">{title}</span>
     </motion.div>
   )
 }
@@ -83,6 +84,12 @@ export default function Links() {
       title: 'Twitter',
       url: 'https://twitter.com/TszhongLai0411',
       color: '#1da1f2',
+    },
+    {
+      icon: faStackOverflow,
+      title: 'Stack overflow',
+      url: 'https://stackoverflow.com/users/15166428',
+      color: '#e87921',
     },
   ]
 
