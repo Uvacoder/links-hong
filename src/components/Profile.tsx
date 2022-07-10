@@ -1,0 +1,32 @@
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+
+import useStyles from './Profile.styles'
+
+export default function Profile() {
+  const { classes } = useStyles()
+
+  return (
+    <div className={classes.profile}>
+      <div className={classes.avatarWrapper}>
+        <motion.div
+          transition={{
+            duration: 0.5,
+          }}
+          whileHover={{
+            rotate: '360deg',
+          }}
+          className={classes.motion}
+        >
+          <Image src="/static/images/avatar.png" width={3850} height={3850} alt="Avatar" />
+        </motion.div>
+      </div>
+      <div className={classes.name}>
+        <h1>小康</h1>
+      </div>
+      <div className={classes.description}>
+        <h2>Front-end developer</h2>
+      </div>
+    </div>
+  )
+}
