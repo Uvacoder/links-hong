@@ -12,6 +12,7 @@ export default createStyles(() => ({
     fontSize: 18,
     fontWeight: 700,
     color: 'white',
+    padding: '24px 0',
   },
 
   name: {

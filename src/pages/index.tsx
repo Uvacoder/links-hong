@@ -20,8 +20,8 @@ const Home: NextPage = () => {
           <div className={classes.bgImage}></div>
           <Profile />
           <Links />
+          <Footer />
         </div>
-        <Footer />
       </div>
     </>
   )

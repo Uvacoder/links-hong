@@ -101,6 +101,7 @@ export default function Links() {
         display: 'flex',
         flexDirection: 'column',
         gap: 16,
+        margin: '44px 0',
       }}
     >
       {LinksArr.map((item, index) => (
