@@ -40,7 +40,7 @@ export default createStyles(() => ({
       backgroundSize: 'cover',
       backgroundPosition: '50%',
       backgroundRepeat: 'no-repeat',
-      opacity: 0.2,
+      opacity: 0.1,
       content: '""',
     },
   },
