@@ -32,7 +32,7 @@ const Home: NextPage = () => {
           description: 'A teenager who want to become a frontend developer',
           images: [
             {
-              url: 'https://honghong.me/static/images/banner.png',
+              url: 'https://link.honghong.me/static/images/banner.png',
               width: 1920,
               height: 929,
               alt: 'A teenager who want to become a frontend developer',
