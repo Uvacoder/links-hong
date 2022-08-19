@@ -1,6 +1,5 @@
 {
-  "name": "links",
-  "version": "0.1.0",
+  "name": "link",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,31 +8,26 @@
     "lint": "next lint",
     "lint:fix": "eslint src --fix && yarn format",
     "lint:strict": "eslint --max-warnings=0 src",
-    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx}\"",
-    "commit": "gitmoji -c"
+    "commit": "gitmoji -c",
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
+    "type-check": "tsc",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@mantine/core": "^4.2.12",
-    "@mantine/dates": "^4.2.12",
-    "@mantine/dropzone": "^4.2.12",
-    "@mantine/form": "^4.2.12",
     "@mantine/hooks": "^4.2.12",
-    "@mantine/modals": "^4.2.12",
     "@mantine/next": "^4.2.12",
-    "@mantine/notifications": "^4.2.12",
-    "@mantine/prism": "^4.2.12",
-    "@mantine/rte": "^4.2.12",
-    "@mantine/spotlight": "^4.2.12",
-    "cookies-next": "^2.1.1",
-    "dayjs": "^1.11.3",
     "framer-motion": "^6.4.3",
     "gitmoji-cli": "^5.0.2",
     "next": "12.2.2",
+    "next-seo": "^5.5.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tabler-icons-react": "^1.52.0"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.3.0",
     "@types/node": "18.0.3",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
@@ -44,9 +38,84 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "typescript": "4.7.4"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=0",
+      "prettier -w"
+    ],
+    "src/**/*.{json,css,scss}": [
+      "prettier -w"
+    ]
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "tabWidth": 2,
+    "semi": false,
+    "importOrder": [
+      "^@?\\w",
+      "^.+\\.s?css$",
+      "^@/data",
+      "^@/lib",
+      "^@/hooks",
+      "^@/components",
+      "^@/"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "importOrderCaseInsensitive": true
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "unused-imports"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "next",
+      "next/core-web-vitals",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "no-console": "warn",
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "react/display-name": "off",
+      "react/jsx-curly-brace-presence": [
+        "warn",
+        {
+          "props": "never",
+          "children": "never"
+        }
+      ],
+      "@typescript-eslint/no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "warn",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          "vars": "all",
+          "varsIgnorePattern": "^_",
+          "args": "after-used",
+          "argsIgnorePattern": "^_"
+        }
+      ]
+    },
+    "globals": {
+      "React": true,
+      "JSX": true
+    }
   }
 }
