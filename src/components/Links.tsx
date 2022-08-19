@@ -1,6 +1,6 @@
 import useStyles from './Links.styles'
 
-import { Box } from '@mantine/core'
+import { Stack } from '@mantine/core'
 import { motion } from 'framer-motion'
 import {
   Book2,
@@ -15,15 +15,11 @@ import {
 
 import { linkType } from '@/lib/types'
 
-const openInNewTab = (url: string) => {
-  window.open(url, '_blank', 'noopener,noreferrer')
-}
-
-const Link = ({ icon, title, url, color }: linkType) => {
+const CustomLink = ({ icon, title, url, color }: linkType) => {
   const { classes } = useStyles({ color })
 
   return (
-    <motion.div
+    <motion.a
       transition={{
         duration: 0.3,
       }}
@@ -33,13 +29,15 @@ const Link = ({ icon, title, url, color }: linkType) => {
       whileTap={{
         scale: 0.95,
       }}
-      onClick={() => openInNewTab(url)}
+      href={url}
+      target='_blank'
+      rel='noopener, noreferrer'
       className={classes.link}
       style={{ borderColor: color }}
     >
       <div className={classes.icon}>{icon}</div>
       <span className={classes.title}>{title}</span>
-    </motion.div>
+    </motion.a>
   )
 }
 
@@ -96,16 +94,9 @@ export default function Links() {
   ]
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 16,
-        margin: '44px 0',
-      }}
-    >
+    <Stack spacing={16} my={44}>
       {LinksArr.map((item, index) => (
-        <Link
+        <CustomLink
           icon={item.icon}
           title={item.title}
           url={item.url}
@@ -113,6 +104,6 @@ export default function Links() {
           key={index}
         />
       ))}
-    </Box>
+    </Stack>
   )
 }

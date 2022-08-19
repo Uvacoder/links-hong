@@ -12,6 +12,7 @@ export default createStyles((_theme, { color }: stylesProps) => ({
     border: `4px solid ${color}`,
     backgroundColor: 'rgba(0, 0, 0, 0.75)',
     padding: '16px 24px',
+    textDecoration: 'none',
   },
 
   icon: {
